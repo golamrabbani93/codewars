@@ -1,25 +1,23 @@
-import logo from './logo.svg';
 import './App.css';
+import {themeChange} from 'theme-change';
+import {useEffect} from 'react';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	useEffect(() => {
+		themeChange(false);
+	}, []);
+	return (
+		<div className="App">
+			<h2>hllo</h2>
+			<select className="gradientselect" data-choose-theme>
+				<option disabled value="">
+					Pick a theme
+				</option>
+				<option value="dark">dark</option>
+				<option value="light">Light</option>
+			</select>
+		</div>
+	);
 }
 
 export default App;
