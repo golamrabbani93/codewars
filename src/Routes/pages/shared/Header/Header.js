@@ -1,7 +1,14 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {Link, NavLink} from 'react-router-dom';
-
+import {themeChange} from 'theme-change';
+import {useEffect} from 'react';
 const Header = () => {
+	useEffect(() => {
+		themeChange(false);
+	}, []);
+	const [theme, setTheme] = useState(false);
+	const [color, setColor] = useState();
+	console.log('🚀🚀: Header -> theme', theme);
 	return (
 		<div>
 			<div className="navbar bg-base-100 container mx-auto">
@@ -42,9 +49,20 @@ const Header = () => {
 								<li className="mr-2">
 									<NavLink to="/blog">Blog</NavLink>
 								</li>
-								<div className="navbar-end lg:hidden">
+								<div className="navbar-end lg:hidden w-full">
 									<Link className="btn">Get started</Link>
 								</div>
+								<select
+									className="select select-primary mt-4 max-w-xs text-xs block lg:hidden "
+									data-choose-theme
+								>
+									<option disabled selected className="text-xs m-0 p-0">
+										Dark mode or light mode?
+									</option>
+
+									<option>Dark</option>
+									<option value="light">Light</option>
+								</select>
 							</ul>
 						</div>
 					</div>
@@ -107,14 +125,22 @@ const Header = () => {
 						</li>
 					</ul>
 				</div>
-				<div className="form-control">
-					<label className="label cursor-pointer">
-						<input type="checkbox" className="toggle toggle-primary" />
-					</label>
-				</div>
+
 				<div className="navbar-end hidden lg:flex">
+					<select
+						className="select select-primary w-24 mx-4 max-w-xs text-xs hidden lg:block"
+						data-choose-theme
+					>
+						<option disabled selected className="text-xs m-0 p-0">
+							Theme
+						</option>
+
+						<option>Dark</option>
+						<option value="light">Light</option>
+					</select>
 					<Link className="btn">Get started</Link>
 				</div>
+
 				<div className="dropdown dropdown-end hidden lg:block">
 					<label tabIndex={0} className="btn btn-ghost btn-circle avatar">
 						<div className="w-10 rounded-full">
