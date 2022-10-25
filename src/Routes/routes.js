@@ -15,7 +15,7 @@ export const router = createBrowserRouter([
 			{
 				path: '/',
 				loader: () => {
-					return fetch('http://localhost:5000/courses');
+					return fetch('https://codewars-server.vercel.app/courses');
 				},
 				element: <Home></Home>,
 			},
@@ -34,7 +34,7 @@ export const router = createBrowserRouter([
 			{
 				path: '/course-details/:id',
 				loader: ({params}) => {
-					return fetch(`http://localhost:5000/course-details/${params.id}`);
+					return fetch(`https://codewars-server.vercel.app/course-details/${params.id}`);
 				},
 				element: <CourseDetails></CourseDetails>,
 			},

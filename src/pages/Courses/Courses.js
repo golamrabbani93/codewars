@@ -6,7 +6,7 @@ const Courses = () => {
 	const [allcourses, setCourses] = useState([]);
 
 	useEffect(() => {
-		fetch('http://localhost:5000/courses')
+		fetch('https://codewars-server.vercel.app/courses')
 			.then((res) => res.json())
 			.then((data) => setCourses(data));
 	}, []);
