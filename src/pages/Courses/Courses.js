@@ -17,7 +17,7 @@ const Courses = () => {
 					<AllCoures course={course}></AllCoures>
 				))}
 			</div>
-			<div className="mt-5 m-5 md:m-0">
+			<div className="mt-5 mx-5 md:mx-0">
 				<ul className="menu bg-base-300  rounded-box sticky top-0">
 					<li className="menu-title text-2xl">
 						<span>All Course</span>
