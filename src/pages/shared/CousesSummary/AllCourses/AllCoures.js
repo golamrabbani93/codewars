@@ -1,6 +1,9 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import {FaStar} from 'react-icons/fa';
+// import ReactPDF from '@react-pdf/renderer';
+
+// ReactPDF.render(<AllCoures />, `${__dirname}/example.pdf`);
 const AllCoures = ({course}) => {
 	const {
 		id,
@@ -14,12 +17,16 @@ const AllCoures = ({course}) => {
 		total_hours,
 		enrolled,
 	} = course;
+	// const render = () => {
+	// 	ReactPDF.render(<AllCoures />, `${__dirname}/example.pdf`);
+	// };
 	return (
 		<div className="card md:w-96 bg-base-300 shadow-xl m-5 md:m-0">
 			<figure className="px-5 pt-5">
 				<img src={img} alt="Shoes" className="rounded-xl" />
 			</figure>
 			<div className="card-body items-start text-start">
+				{/* <button onClick={render}>download</button> */}
 				<h2 className="card-title ">{title}</h2>
 				<p className="text-sm ">
 					{short_description.length > 30
