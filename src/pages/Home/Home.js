@@ -27,7 +27,11 @@ const Home = () => {
 				</div>
 			</div>
 			<div className="all-courses mt-24 mb-24 container mx-auto">
-				<h2 className="text-5xl uppercase mb-10 ">See All Courses</h2>
+				<h2 className="text-5xl uppercase mb-3 font-extrabold ">See All Courses</h2>
+				<p className="w-1/2 mx-auto mb-10">
+					Efficiently aggregate end-to-end core competencies without maintainable ideas. Dynamically
+					foster tactical solutions without enabled value.
+				</p>
 				<div className="grid md:grid-cols-3 gap-6">
 					{allCoures.map((course) => (
 						<AllCoures course={course} key={course.id}></AllCoures>
