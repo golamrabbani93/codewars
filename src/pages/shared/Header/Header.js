@@ -50,7 +50,7 @@ const Header = () => {
 									<Link className="btn">Get started</Link>
 								</div>
 								<select
-									className="select select-primary mt-4 max-w-xs text-xs block lg:hidden "
+									className="select select-primary mt-4 w-full text-xs block lg:hidden "
 									data-choose-theme
 								>
 									<option disabled selected className="text-xs m-0 p-0">
