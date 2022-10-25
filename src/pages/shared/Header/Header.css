@@ -1,4 +1,5 @@
-li > a:hover {
+.navgation > li > a:hover,
+.navbar > li > a:hover {
 	background-color: transparent;
 	color: rgba(255, 255, 255, 0.596);
 }

@@ -8,7 +8,7 @@ const Header = () => {
 		themeChange(false);
 	}, []);
 	return (
-		<div className="bg-primary">
+		<div className="bg-primary navgation">
 			<div className="navbar container mx-auto">
 				<div className="navbar-start w-0 lg:w-1/2 mr-auto">
 					<div className="flex justify-between ">
@@ -54,11 +54,7 @@ const Header = () => {
 									className="select select-primary mt-4 w-full text-xs block lg:hidden "
 									data-choose-theme
 								>
-									<option disabled selected className="text-xs m-0 p-0">
-										Dark mode or light mode?
-									</option>
-
-									<option>Dark</option>
+									<option value="dark">Dark</option>
 									<option value="light">Light</option>
 								</select>
 							</ul>
@@ -106,7 +102,7 @@ const Header = () => {
 						className="select select-primary w-24 mx-4 max-w-xs text-xs hidden lg:block"
 						data-choose-theme
 					>
-						<option>Dark</option>
+						<option value="">Dark</option>
 						<option value="light">Light</option>
 					</select>
 					<Link className="btn">Get started</Link>
