@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {Link, NavLink} from 'react-router-dom';
 import {themeChange} from 'theme-change';
 import {useEffect} from 'react';
@@ -6,9 +6,6 @@ const Header = () => {
 	useEffect(() => {
 		themeChange(false);
 	}, []);
-	const [theme, setTheme] = useState(false);
-	const [color, setColor] = useState();
-	console.log('🚀🚀: Header -> theme', theme);
 	return (
 		<div>
 			<div className="navbar bg-base-100 container mx-auto">
@@ -69,7 +66,7 @@ const Header = () => {
 					<div className="mr-auto">
 						<Link
 							to="/"
-							className=" btn btn-ghost hidden lg:flex normal-case text-xl text-white bg-primary text-right"
+							className=" btn btn-ghost hidden lg:flex normal-case text-xl text-white bg-primary text-right mx-auto"
 						>
 							CodeWars
 						</Link>
@@ -131,10 +128,6 @@ const Header = () => {
 						className="select select-primary w-24 mx-4 max-w-xs text-xs hidden lg:block"
 						data-choose-theme
 					>
-						<option disabled selected className="text-xs m-0 p-0">
-							Theme
-						</option>
-
 						<option>Dark</option>
 						<option value="light">Light</option>
 					</select>
