@@ -8,7 +8,7 @@ const Header = () => {
 	}, []);
 	return (
 		<div>
-			<div className="navbar bg-base-100 container mx-auto">
+			<div className="navbar bg-base-300 container mx-auto">
 				<div className="navbar-start w-0 lg:w-1/2 mr-auto">
 					<div className="flex justify-between ">
 						<div className="dropdown">
@@ -30,7 +30,7 @@ const Header = () => {
 							</label>
 							<ul
 								tabIndex={0}
-								className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
+								className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52 "
 							>
 								<li className="mr-2">
 									<NavLink to="/" end>
@@ -104,7 +104,7 @@ const Header = () => {
 						</li>
 					</ul>
 				</div>
-				<div className="navbar-center hidden lg:flex">
+				<div className="navbar-center hidden lg:flex text-white">
 					<ul className="menu menu-horizontal p-0">
 						<li className="mr-2">
 							<NavLink to="/" end>

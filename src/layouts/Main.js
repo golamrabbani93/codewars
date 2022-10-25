@@ -1,6 +1,6 @@
 import React from 'react';
 import {Outlet} from 'react-router-dom';
-import Header from '../Routes/pages/shared/Header/Header';
+import Header from '../pages/shared/Header/Header';
 
 const Main = () => {
 	return (

@@ -1,0 +1,25 @@
+.home-container {
+	background: linear-gradient(to left, #3d46c9, #162e89);
+	width: 100%;
+	padding-bottom: 10px;
+}
+.banner-img > img {
+	animation: leftimg 8s infinite;
+}
+@keyframes leftimg {
+	0% {
+		top: 0px;
+	}
+	50% {
+		top: 100px;
+	}
+	100% {
+		top: 0px;
+	}
+}
+@media (min-width: 768px) {
+	.md\:h-screen {
+		height: 100vh;
+		margin-top: -77px;
+	}
+}
