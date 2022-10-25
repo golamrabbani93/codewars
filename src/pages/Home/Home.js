@@ -28,7 +28,7 @@ const Home = () => {
 			</div>
 			<div className="all-courses mt-24 mb-24 container mx-auto">
 				<h2 className="text-5xl uppercase mb-10 ">See All Courses</h2>
-				<div className="grid grid-cols-3 gap-6">
+				<div className="grid md:grid-cols-3 gap-6">
 					{allCoures.map((course) => (
 						<AllCoures course={course} key={course.id}></AllCoures>
 					))}

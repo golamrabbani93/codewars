@@ -16,19 +16,19 @@ const AllCoures = ({course}) => {
 		enrolled,
 	} = course;
 	return (
-		<div className="card w-96 bg-base-300 shadow-xl">
-			<figure className="px-10 pt-10">
+		<div className="card md:w-96 bg-base-300 shadow-xl m-5 md:m-0">
+			<figure className="px-5 pt-5">
 				<img src={img} alt="Shoes" className="rounded-xl" />
 			</figure>
 			<div className="card-body items-start text-start">
-				<h2 className="card-title">{title}</h2>
+				<h2 className="card-title ">{title}</h2>
 				<p className="text-sm ">
 					{short_description.length > 30
 						? `${short_description.slice(0, 60)}`
 						: {short_description}}
 				</p>
 				<div className="author flex justify-between  items-center">
-					<p className="mr-5">Instructor: {instructor}</p>
+					<p className="mr-5 text-xs	">Instructor: {instructor}</p>
 					<p className="text-warning text-2xl">${price}</p>
 				</div>
 				<div className="">
@@ -38,14 +38,14 @@ const AllCoures = ({course}) => {
 						<span>{total_hours} Total Hours</span>
 					</div>
 				</div>
-				<div className="card-actions flex justify-evenly items-center">
+				<div className="card-actions md:flex justify-evenly items-center">
 					<Link to={`/course-details/${id}`}>
 						<button className="btn btn-primary">See Details</button>
 					</Link>
 
 					<div className="">
 						{seller.length !== 0 && (
-							<p className=" bg-secondary p-2 uppercase rounded-xl ml-16 text-white font-bold">
+							<p className=" bg-secondary p-2 uppercase rounded-xl md:ml-16 text-white font-bold">
 								{seller}
 							</p>
 						)}
