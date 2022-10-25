@@ -1,6 +1,6 @@
 import React from 'react';
 import {FaStar} from 'react-icons/fa';
-import {useLoaderData} from 'react-router-dom';
+import {Link, useLoaderData} from 'react-router-dom';
 import ReactToPdf from '../../ReactToPdf/ReactToPdf';
 import './CourseDetails.css';
 
@@ -55,8 +55,12 @@ const CourseDetails = () => {
 								</div>
 							</div>
 							<div className="button mt-5">
-								<button className="btn btn-primary mr-5">Get Started</button>
-								<button className="btn btn-primary">Get Started</button>
+								<Link to="/courses">
+									<button className="btn btn-primary mr-5">Go Back</button>
+								</Link>
+								<Link to="/premium">
+									<button className="btn btn-primary">Get Premium</button>
+								</Link>
 							</div>
 						</div>
 					</div>
