@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-
+import {FaStar} from 'react-icons/fa';
 const AllCoures = ({course}) => {
 	const {
 		id,
@@ -30,11 +30,16 @@ const AllCoures = ({course}) => {
 					<p className="mr-5 text-xs	">Instructor: {instructor}</p>
 					<p className="text-warning text-2xl">${price}</p>
 				</div>
-				<div className="">
-					<div className="">
-						<span className="text-warning font-bold">{rating}</span>
-						<span>({enrolled})</span>
-						<span>{total_hours} Total Hours</span>
+				<div className="w-full">
+					<div className="flex justify-between items-center ">
+						<div className="flex items-center">
+							<FaStar className="text-warning"></FaStar>
+							<span className="text-warning font-bold ml-1">{rating}</span>
+							<span>({enrolled})</span>
+						</div>
+						<div className="">
+							<span className="text-warning font-bold ">{total_hours}Hours</span>
+						</div>
 					</div>
 				</div>
 				<div className="card-actions md:flex justify-evenly items-center">

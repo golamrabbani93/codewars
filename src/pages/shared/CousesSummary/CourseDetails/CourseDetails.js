@@ -1,4 +1,5 @@
 import React from 'react';
+import {FaStar} from 'react-icons/fa';
 import {useLoaderData} from 'react-router-dom';
 
 const CourseDetails = () => {
@@ -15,17 +16,26 @@ const CourseDetails = () => {
 						<h1 className="text-2xl md:text-5xl font-bold">{title}</h1>
 						<p className="text-xs md:text-xl py-3">{description}</p>
 						<div className="other info p-4 border-primary border md:flex justify-between items-center">
-							<p className="">
-								Instructor: <span className="text-warning text-2xl font-bold">{instructor}</span>
-							</p>
-							<p className="">
-								Price: <span className="text-warning text-2xl font-bold">${price}</span>
-							</p>
-							<div className="rate">
-								<p className="text-warning inline-block ">
-									<span className="text-2xl font-bold">${rating}</span>
+							<div>
+								<p className="">
+									Instructor: <span className="text-warning text-2xl font-bold">{instructor}</span>
 								</p>
-								<span>({enrolled})</span>
+							</div>
+							<div>
+								<p className="">
+									Price: <span className="text-warning text-2xl font-bold">${price}</span>
+								</p>
+							</div>
+
+							<div>
+								<p className="text-warning flex justify-center items-center">
+									<FaStar></FaStar>
+									<span className="text-2xl font-bold ml-1">${rating}</span>
+									<span>({enrolled})</span>
+								</p>
+							</div>
+
+							<div>
 								<p className=" inline-block ">
 									<span className="text-warning text-2xl font-bold">${total_hours}</span>Total Hours
 								</p>
