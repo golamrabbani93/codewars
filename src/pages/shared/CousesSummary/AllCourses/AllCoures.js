@@ -45,7 +45,7 @@ const AllCoures = ({course}) => {
 
 					<div className="">
 						{seller.length !== 0 && (
-							<p className=" bg-secondary p-2 uppercase rounded-xl ml-16 text-black font-bold">
+							<p className=" bg-secondary p-2 uppercase rounded-xl ml-16 text-white font-bold">
 								{seller}
 							</p>
 						)}
