@@ -1,6 +1,6 @@
 li > a:hover {
 	background-color: transparent;
-	color: rgba(255, 255, 255, 0.836);
+	color: rgba(255, 255, 255, 0.596);
 }
 li > a.active {
 	background: transparent;
