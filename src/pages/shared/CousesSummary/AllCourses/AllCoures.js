@@ -3,8 +3,18 @@ import {Link} from 'react-router-dom';
 
 const AllCoures = ({course}) => {
 	console.log('🚀🚀: AllCoures -> course', course);
-	const {img, title, instructor, price, rating, seller, short_description, total_hours, enrolled} =
-		course;
+	const {
+		id,
+		img,
+		title,
+		instructor,
+		price,
+		rating,
+		seller,
+		short_description,
+		total_hours,
+		enrolled,
+	} = course;
 	return (
 		<div className="card w-96 bg-base-300 shadow-xl">
 			<figure className="px-10 pt-10">
@@ -29,8 +39,8 @@ const AllCoures = ({course}) => {
 					</div>
 				</div>
 				<div className="card-actions flex justify-evenly items-center">
-					<Link>
-						<button className="btn btn-primary">Buy Now</button>
+					<Link to={`/course-details/${id}`}>
+						<button className="btn btn-primary">See Details</button>
 					</Link>
 
 					<div className="">

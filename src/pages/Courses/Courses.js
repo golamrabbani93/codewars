@@ -24,7 +24,7 @@ const Courses = () => {
 					</li>
 					{categories.map((cat) => (
 						<li className="hover-bordered text-xs" key={cat.id}>
-							<Link to>{cat.title}</Link>
+							<Link to={`/course-details/${cat.id}`}>{cat.title}</Link>
 						</li>
 					))}
 				</ul>
