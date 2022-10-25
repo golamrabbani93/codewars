@@ -2,17 +2,18 @@ import React from 'react';
 import {Link, NavLink} from 'react-router-dom';
 import {themeChange} from 'theme-change';
 import {useEffect} from 'react';
+import './Header.css';
 const Header = () => {
 	useEffect(() => {
 		themeChange(false);
 	}, []);
 	return (
-		<div>
-			<div className="navbar bg-base-300 container mx-auto">
+		<div className="bg-primary">
+			<div className="navbar container mx-auto">
 				<div className="navbar-start w-0 lg:w-1/2 mr-auto">
 					<div className="flex justify-between ">
 						<div className="dropdown">
-							<label tabIndex={0} className="btn btn-ghost lg:hidden">
+							<label tabIndex={0} className="btn text-white btn-ghost lg:hidden">
 								<svg
 									xmlns="http://www.w3.org/2000/svg"
 									className="h-5 w-5"
@@ -66,7 +67,7 @@ const Header = () => {
 					<div className="mr-auto">
 						<Link
 							to="/"
-							className=" btn btn-ghost hidden lg:flex normal-case text-xl text-white bg-primary text-right mx-auto"
+							className=" btn btn-ghost hidden lg:flex normal-case text-xl text-white bg-transparent text-right mx-auto "
 						>
 							CodeWars
 						</Link>

@@ -1,0 +1,8 @@
+li > a:hover {
+	background-color: transparent;
+	color: rgba(255, 255, 255, 0.836);
+}
+li > a.active {
+	background: transparent;
+	font-weight: bolder;
+}
