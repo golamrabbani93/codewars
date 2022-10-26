@@ -28,7 +28,7 @@ const Premium = () => {
 				<p>
 					Total Enrolled <span className="  text-3xl font-bold">{enrolled}</span>
 				</p>
-				<form onSubmit={handleBuy} className="mt-5">
+				<form onSubmit={handleBuy} className="mt-5 ">
 					<input
 						type="text"
 						placeholder="Your Name "
@@ -39,7 +39,7 @@ const Premium = () => {
 					<input
 						type="text"
 						placeholder="Your Phone NO."
-						className="input input-bordered input-primary w-full max-w-xs mt-4 ml-4"
+						className="input input-bordered input-primary w-full max-w-xs mt-4 md:ml-4"
 						required
 					/>
 					<div className="card-actions justify-end mt-5">
