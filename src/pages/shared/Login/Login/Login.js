@@ -1,14 +1,36 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import googleimg from '../../../../assets/images/google.png';
 import githubimg from '../../../../assets/images/github.png';
-import {Link} from 'react-router-dom';
+import {Link, useNavigate} from 'react-router-dom';
+import {AuthContext} from '../../../../contexts/ContextProvider/ContextProvider';
+import toast from 'react-hot-toast';
 const Login = () => {
+	// *get Context-data
+	const {loginEmailPass} = useContext(AuthContext);
+	// *use navigate
+	const navigate = useNavigate();
 	//*get all Login form data
 	const handleLogin = (e) => {
 		e.preventDefault();
 		const form = e.target;
 		const email = form.email.value;
 		const password = form.password.value;
+		loginEmailPass(email, password)
+			.then((result) => {
+				const user = result.user;
+				console.log('🚀🚀: handleLogin -> user', user);
+				form.reset();
+				navigate('/');
+				toast.success('Login Successfully', {
+					duration: 3000,
+				});
+			})
+			.catch((err) => {
+				console.error(err);
+				toast.error(`Login Unsuccess ${err.message}`, {
+					duration: 5000,
+				});
+			});
 	};
 	return (
 		<div>
