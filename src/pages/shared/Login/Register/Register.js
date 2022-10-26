@@ -8,7 +8,7 @@ import toast from 'react-hot-toast';
 
 const Register = () => {
 	// *get context data
-	const {UserCreateEmailPass, userUpdateProfile} = useContext(AuthContext);
+	const {UserCreateEmailPass, userUpdateProfile, googleSignIn} = useContext(AuthContext);
 	//*get all register form data
 	const handleRegister = (e) => {
 		e.preventDefault();
@@ -34,6 +34,8 @@ const Register = () => {
 				});
 			});
 	};
+	//*update user name and photo
+
 	const handleUpdate = (name, photo) => {
 		const profile = {
 			displayName: name,
@@ -45,6 +47,22 @@ const Register = () => {
 			})
 			.catch((err) => {
 				console.error(err);
+			});
+	};
+	//*google sign in method
+	const handleGoogleSignIn = () => {
+		googleSignIn()
+			.then((result) => {
+				// const user = result.user;
+				toast.success('Google Register Successfull!', {
+					duration: 5000,
+				});
+			})
+			.catch((err) => {
+				console.error(err);
+				toast.error(err.message, {
+					duration: 5000,
+				});
 			});
 	};
 	return (
@@ -121,7 +139,7 @@ const Register = () => {
 							<div className="social">
 								<span className="text-xl">Continue with </span>
 								<p className="flex justify-center items-center mt-3">
-									<button className="ml-3">
+									<button onClick={handleGoogleSignIn} className="ml-3">
 										<img
 											src={googleimg}
 											alt=""
