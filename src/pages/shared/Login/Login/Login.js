@@ -6,7 +6,7 @@ import {AuthContext} from '../../../../contexts/ContextProvider/ContextProvider'
 import toast from 'react-hot-toast';
 const Login = () => {
 	// *get Context-data
-	const {loginEmailPass, googleSignIn} = useContext(AuthContext);
+	const {loginEmailPass, googleSignIn, githubSignIN} = useContext(AuthContext);
 	// *use navigate
 	const navigate = useNavigate();
 	const location = useLocation();
@@ -40,6 +40,23 @@ const Login = () => {
 				// const user = result.user;
 				navigate(from, {replace: true});
 				toast.success('Google Register Successfull!', {
+					duration: 5000,
+				});
+			})
+			.catch((err) => {
+				console.error(err);
+				toast.error(err.message, {
+					duration: 5000,
+				});
+			});
+	};
+	//*google sign in method
+	const handleGithubSignIn = () => {
+		githubSignIN()
+			.then((result) => {
+				// const user = result.user;
+				navigate(from, {replace: true});
+				toast.success('Github Login Successfull!', {
 					duration: 5000,
 				});
 			})
@@ -110,7 +127,7 @@ const Login = () => {
 											style={{borderRadius: '50%'}}
 										/>
 									</button>
-									<button className="ml-3">
+									<button onClick={handleGithubSignIn} className="ml-3">
 										<img
 											src={githubimg}
 											alt=""
