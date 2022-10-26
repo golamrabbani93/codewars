@@ -38,6 +38,7 @@ const Login = () => {
 		googleSignIn()
 			.then((result) => {
 				// const user = result.user;
+				navigate(from, {replace: true});
 				toast.success('Google Register Successfull!', {
 					duration: 5000,
 				});
