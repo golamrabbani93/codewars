@@ -3,6 +3,7 @@ import Blog from '../pages/Blog/Blog';
 import Courses from '../pages/Courses/Courses';
 import FAQ from '../pages/FAQ/FAQ';
 import Home from '../pages/Home/Home';
+import Premium from '../pages/Premium/Premium';
 import CourseDetails from '../pages/shared/CousesSummary/CourseDetails/CourseDetails';
 import Login from '../pages/shared/Login/Login/Login';
 import Register from '../pages/shared/Login/Register/Register';
@@ -39,6 +40,13 @@ export const router = createBrowserRouter([
 					return fetch(`https://codewars-server.vercel.app/course-details/${params.id}`);
 				},
 				element: <CourseDetails></CourseDetails>,
+			},
+			{
+				path: '/premium/:id',
+				loader: ({params}) => {
+					return fetch(`https://codewars-server.vercel.app/course-details/${params.id}`);
+				},
+				element: <Premium></Premium>,
 			},
 			{
 				path: '/login',

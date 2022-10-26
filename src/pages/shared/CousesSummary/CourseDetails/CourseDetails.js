@@ -8,7 +8,7 @@ const ref = React.createRef();
 const CourseDetails = () => {
 	//*get Single Course Data
 	const course = useLoaderData();
-	const {img, title, instructor, price, rating, description, total_hours, enrolled} = course;
+	const {id, img, title, instructor, price, rating, description, total_hours, enrolled} = course;
 
 	return (
 		<div>
@@ -58,7 +58,7 @@ const CourseDetails = () => {
 								<Link to="/courses">
 									<button className="btn btn-primary mr-5">Go Back</button>
 								</Link>
-								<Link to="/premium">
+								<Link to={`/premium/${id}`}>
 									<button className="btn btn-primary">Get Premium</button>
 								</Link>
 							</div>
