@@ -3,23 +3,47 @@ import googleimg from '../../../../assets/images/google.png';
 import githubimg from '../../../../assets/images/github.png';
 import {Link} from 'react-router-dom';
 const Login = () => {
+	//*get all Login form data
+	const handleLogin = (e) => {
+		e.preventDefault();
+		const form = e.target;
+		const email = form.email.value;
+		console.log('🚀🚀: handleLogin -> email', email);
+		const password = form.password.value;
+		console.log('🚀🚀: handleLogin -> password', password);
+	};
 	return (
 		<div>
 			<div className="hero min-h-screen bg-base-100">
 				<div className="hero-content flex-col lg:flex-row-reverse">
-					<form className="card flex-shrink-0 sm:w-96 max-w-sm shadow-2xl bg-base-300">
+					<form
+						onSubmit={handleLogin}
+						className="card flex-shrink-0 sm:w-96 max-w-sm shadow-2xl bg-base-300"
+					>
 						<div className="card-body">
 							<div className="form-control">
 								<label className="label">
 									<span className="label-text">Email</span>
 								</label>
-								<input type="text" placeholder="email" className="input input-bordered" />
+								<input
+									name="email"
+									type="email"
+									placeholder="email"
+									className="input input-bordered"
+									required
+								/>
 							</div>
 							<div className="form-control">
 								<label className="label">
 									<span className="label-text">Password</span>
 								</label>
-								<input type="text" placeholder="password" className="input input-bordered" />
+								<input
+									name="password"
+									type="password"
+									placeholder="password"
+									className="input input-bordered"
+									required
+								/>
 								<label className="label">
 									<Link href="#" className="label-text-alt text-warning link link-hover">
 										Forgot password?
