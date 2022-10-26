@@ -19,10 +19,12 @@ const ContextProvider = ({children}) => {
 	const auth = getAuth(app);
 	// *create user firbase with email and password
 	const UserCreateEmailPass = (email, password) => {
+		setLoader(true);
 		return createUserWithEmailAndPassword(auth, email, password);
 	};
 	// *Login user firbase with email and password
 	const loginEmailPass = (email, password) => {
+		setLoader(true);
 		return signInWithEmailAndPassword(auth, email, password);
 	};
 	// *Get current Login user
@@ -37,15 +39,18 @@ const ContextProvider = ({children}) => {
 	}, []);
 	//*update user profile
 	const userUpdateProfile = (profile) => {
+		setLoader(true);
 		return updateProfile(auth.currentUser, profile);
 	};
 	// *google signIn
 	const googleProvider = new GoogleAuthProvider();
 	const googleSignIn = () => {
+		setLoader(true);
 		return signInWithPopup(auth, googleProvider);
 	};
 	// *user logout function
 	const userLogOut = () => {
+		setLoader(true);
 		return signOut(auth);
 	};
 	const info = {
