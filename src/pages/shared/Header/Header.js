@@ -7,6 +7,7 @@ import {AuthContext} from '../../../contexts/ContextProvider/ContextProvider';
 const Header = () => {
 	// *get Context data
 	const {user} = useContext(AuthContext);
+	console.log('🚀🚀: Header -> user', user);
 	//*change theme function
 	useEffect(() => {
 		themeChange(false);
@@ -111,34 +112,35 @@ const Header = () => {
 						<option value="">Dark</option>
 						<option value="light">Light</option>
 					</select>
+				</div>
+				{user?.uid ? (
+					<div className="dropdown dropdown-end " title="Golam Rabbani">
+						<label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+							<div className="w-10 rounded-full">
+								<img src="https://placeimg.com/80/80/people" alt="" />
+							</div>
+						</label>
+						<ul
+							tabIndex={0}
+							className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
+						>
+							<li>
+								<Link className="justify-between">
+									Profile
+									<span className="badge">New</span>
+								</Link>
+							</li>
+							<li>{/* <Link>{user}</Link> */}</li>
+							<li>
+								<Link>Logout</Link>
+							</li>
+						</ul>
+					</div>
+				) : (
 					<Link to="/login" className="btn">
 						Login
 					</Link>
-				</div>
-				<div className="dropdown dropdown-end " title="Golam Rabbani">
-					<label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-						<div className="w-10 rounded-full">
-							<img src="https://placeimg.com/80/80/people" alt="" />
-						</div>
-					</label>
-					<ul
-						tabIndex={0}
-						className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
-					>
-						<li>
-							<Link className="justify-between">
-								Profile
-								<span className="badge">New</span>
-							</Link>
-						</li>
-						<li>
-							<Link>{user}</Link>
-						</li>
-						<li>
-							<Link>Logout</Link>
-						</li>
-					</ul>
-				</div>
+				)}
 			</div>
 		</div>
 	);
