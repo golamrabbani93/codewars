@@ -4,6 +4,7 @@ import './Register.css';
 import googleimg from '../../../../assets/images/google.png';
 import githubimg from '../../../../assets/images/github.png';
 import {AuthContext} from '../../../../contexts/ContextProvider/ContextProvider';
+import toast from 'react-hot-toast';
 const Register = () => {
 	// *get context data
 	const {UserCreateEmailPass} = useContext(AuthContext);
@@ -18,12 +19,17 @@ const Register = () => {
 
 		UserCreateEmailPass(email, password)
 			.then((result) => {
-				const user = result.user;
+				// const user = result.user;
 				form.reset();
-				console.log('🚀🚀: handleRegister -> user', user);
+				toast.success('Register Successfull!', {
+					duration: 5000,
+				});
 			})
 			.catch((err) => {
 				console.error(err);
+				toast.error(err.message, {
+					duration: 5000,
+				});
 			});
 	};
 	return (
