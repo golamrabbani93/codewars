@@ -29,6 +29,9 @@ export const router = createBrowserRouter([
 			},
 			{
 				path: '/faq',
+				loader: () => {
+					return fetch('https://codewars-server.vercel.app/faq');
+				},
 				element: <FAQ></FAQ>,
 			},
 			{
