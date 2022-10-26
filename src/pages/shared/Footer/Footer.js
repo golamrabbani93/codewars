@@ -5,10 +5,18 @@ const Footer = () => {
 	return (
 		<footer className="footer footer-center mt-10 p-10 bg-primary text-primary-content">
 			<div className="grid grid-flow-col gap-4" style={{marginBottom: '-20px'}}>
-				<Link className="link link-hover">Home</Link>
-				<Link className="link link-hover">Courses</Link>
-				<Link className="link link-hover">FAQ</Link>
-				<Link className="link link-hover">BLog</Link>
+				<Link to={'/'} className="link link-hover">
+					Home
+				</Link>
+				<Link to={'/courses'} className="link link-hover">
+					Courses
+				</Link>
+				<Link to={'/faq'} className="link link-hover">
+					FAQ
+				</Link>
+				<Link to={'/blog'} className="link link-hover">
+					BLog
+				</Link>
 			</div>
 			<div>
 				<img src={img} alt="" width="60" height="60" />
