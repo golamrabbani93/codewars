@@ -14,7 +14,7 @@ const Courses = () => {
 		<div className="courses-container grid">
 			<div className="bg-base-100 grid md:grid-cols-2 gap-6 container md:ml-5 mt-5">
 				{allcourses.map((course) => (
-					<AllCoures course={course}></AllCoures>
+					<AllCoures course={course} key={course.id}></AllCoures>
 				))}
 			</div>
 			<div className="mt-5 mx-5 md:mx-0">
