@@ -52,11 +52,15 @@ const Header = () => {
 								<li className="mr-2">
 									<NavLink to="/blog">Blog</NavLink>
 								</li>
-								<div className="navbar-end lg:hidden w-full">
-									<Link to="/login" className="btn">
-										Login
-									</Link>
-								</div>
+								{user?.uid ? (
+									''
+								) : (
+									<div className="navbar-end lg:hidden w-full">
+										<Link to="/login" className="btn">
+											Login
+										</Link>
+									</div>
+								)}
 								<select
 									className="select select-primary mt-4 w-full text-xs block lg:hidden "
 									data-choose-theme
