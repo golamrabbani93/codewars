@@ -33,7 +33,7 @@ const ContextProvider = ({children}) => {
 	const userUpdateProfile = (profile) => {
 		return updateProfile(auth.currentUser, profile);
 	};
-	const info = {user, UserCreateEmailPass, loginEmailPass};
+	const info = {user, UserCreateEmailPass, loginEmailPass, userUpdateProfile};
 
 	return <AuthContext.Provider value={info}>{children}</AuthContext.Provider>;
 };

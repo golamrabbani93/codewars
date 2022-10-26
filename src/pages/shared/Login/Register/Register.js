@@ -5,9 +5,10 @@ import googleimg from '../../../../assets/images/google.png';
 import githubimg from '../../../../assets/images/github.png';
 import {AuthContext} from '../../../../contexts/ContextProvider/ContextProvider';
 import toast from 'react-hot-toast';
+
 const Register = () => {
 	// *get context data
-	const {UserCreateEmailPass} = useContext(AuthContext);
+	const {UserCreateEmailPass, userUpdateProfile} = useContext(AuthContext);
 	//*get all register form data
 	const handleRegister = (e) => {
 		e.preventDefault();
@@ -21,6 +22,7 @@ const Register = () => {
 			.then((result) => {
 				// const user = result.user;
 				form.reset();
+				handleUpdate(name, photo);
 				toast.success('Register Successfull!', {
 					duration: 5000,
 				});
@@ -30,6 +32,19 @@ const Register = () => {
 				toast.error(err.message, {
 					duration: 5000,
 				});
+			});
+	};
+	const handleUpdate = (name, photo) => {
+		const profile = {
+			displayName: name,
+			photoURL: photo,
+		};
+		userUpdateProfile(profile)
+			.then((result) => {
+				// const user = result.user;
+			})
+			.catch((err) => {
+				console.error(err);
 			});
 	};
 	return (
