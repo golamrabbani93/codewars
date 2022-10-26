@@ -18,7 +18,6 @@ const Login = () => {
 		loginEmailPass(email, password)
 			.then((result) => {
 				const user = result.user;
-				console.log('🚀🚀: handleLogin -> user', user);
 				form.reset();
 				navigate('/');
 				toast.success('Login Successfully', {
