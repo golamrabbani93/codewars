@@ -33,6 +33,9 @@ export const router = createBrowserRouter([
 			},
 			{
 				path: '/blog',
+				loader: () => {
+					return fetch('https://codewars-server.vercel.app/blog');
+				},
 				element: <Blog></Blog>,
 			},
 			{
