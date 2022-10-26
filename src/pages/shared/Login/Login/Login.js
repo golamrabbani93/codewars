@@ -23,7 +23,7 @@ const Login = () => {
 				form.reset();
 				navigate(from, {replace: true});
 				toast.success('Login Successfully', {
-					duration: 3000,
+					duration: 2000,
 				});
 			})
 			.catch((err) => {
