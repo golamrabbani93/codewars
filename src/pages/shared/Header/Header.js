@@ -8,7 +8,6 @@ import {AuthContext} from '../../../contexts/ContextProvider/ContextProvider';
 const Header = () => {
 	// *get Context data
 	const {user, userLogOut} = useContext(AuthContext);
-	console.log('🚀🚀: Header -> user', user);
 	//*change theme function
 	useEffect(() => {
 		themeChange(false);
