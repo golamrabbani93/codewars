@@ -6,7 +6,7 @@ import {AuthContext} from '../../../../contexts/ContextProvider/ContextProvider'
 import toast from 'react-hot-toast';
 const Login = () => {
 	// *get Context-data
-	const {loginEmailPass} = useContext(AuthContext);
+	const {loginEmailPass, googleSignIn} = useContext(AuthContext);
 	// *use navigate
 	const navigate = useNavigate();
 	const location = useLocation();
@@ -29,6 +29,22 @@ const Login = () => {
 			.catch((err) => {
 				console.error(err);
 				toast.error(`Login Unsuccess ${err.message}`, {
+					duration: 5000,
+				});
+			});
+	};
+	//*google sign in method
+	const handleGoogleSignIn = () => {
+		googleSignIn()
+			.then((result) => {
+				// const user = result.user;
+				toast.success('Google Register Successfull!', {
+					duration: 5000,
+				});
+			})
+			.catch((err) => {
+				console.error(err);
+				toast.error(err.message, {
 					duration: 5000,
 				});
 			});
@@ -84,7 +100,7 @@ const Login = () => {
 							<div className="social">
 								<span className="text-xl">Continue with </span>
 								<p className="flex justify-center items-center mt-3">
-									<button className="ml-3">
+									<button onClick={handleGoogleSignIn} className="ml-3">
 										<img
 											src={googleimg}
 											alt=""
