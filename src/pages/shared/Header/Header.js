@@ -2,16 +2,27 @@ import React, {useContext} from 'react';
 import {Link, NavLink} from 'react-router-dom';
 import {themeChange} from 'theme-change';
 import {useEffect} from 'react';
+import toast from 'react-hot-toast';
 import './Header.css';
 import {AuthContext} from '../../../contexts/ContextProvider/ContextProvider';
 const Header = () => {
 	// *get Context data
-	const {user} = useContext(AuthContext);
+	const {user, userLogOut} = useContext(AuthContext);
 	console.log('🚀🚀: Header -> user', user);
 	//*change theme function
 	useEffect(() => {
 		themeChange(false);
 	}, []);
+	//*handle Logout function
+	const handleLogOut = () => {
+		userLogOut()
+			.then((result) => {
+				toast.success('Logout Successfully', {
+					duration: 3000,
+				});
+			})
+			.catch((err) => {});
+	};
 	return (
 		<div className="bg-primary navgation">
 			<div className="navbar container mx-auto">
@@ -135,8 +146,8 @@ const Header = () => {
 								<Link className="justify-between">Edit Profile</Link>
 							</li>
 
-							<li>
-								<Link>Logout</Link>
+							<li onClick={handleLogOut}>
+								<button>Logout</button>
 							</li>
 						</ul>
 					</div>
