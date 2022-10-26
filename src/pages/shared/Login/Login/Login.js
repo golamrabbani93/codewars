@@ -39,7 +39,7 @@ const Login = () => {
 			.then((result) => {
 				// const user = result.user;
 				navigate(from, {replace: true});
-				toast.success('Google Register Successfull!', {
+				toast.success('Google Login Successfull!', {
 					duration: 5000,
 				});
 			})
@@ -50,7 +50,7 @@ const Login = () => {
 				});
 			});
 	};
-	//*google sign in method
+	//*Github sign in method
 	const handleGithubSignIn = () => {
 		githubSignIN()
 			.then((result) => {
@@ -71,11 +71,8 @@ const Login = () => {
 		<div>
 			<div className="hero min-h-screen bg-base-100">
 				<div className="hero-content flex-col lg:flex-row-reverse">
-					<form
-						onSubmit={handleLogin}
-						className="card flex-shrink-0 sm:w-96 max-w-sm shadow-2xl bg-base-300"
-					>
-						<div className="card-body">
+					<div className="card flex-shrink-0 sm:w-96 max-w-sm shadow-2xl bg-base-300">
+						<form onSubmit={handleLogin} className="card-body pb-0">
 							<div className="form-control">
 								<label className="label">
 									<span className="label-text">Email</span>
@@ -115,31 +112,31 @@ const Login = () => {
 								<button className="btn btn-primary">Login</button>
 							</div>
 							<span className="border border-warning  my-2"></span>
-							<div className="social">
-								<span className="text-xl">Continue with </span>
-								<p className="flex justify-center items-center mt-3">
-									<button onClick={handleGoogleSignIn} className="ml-3">
-										<img
-											src={googleimg}
-											alt=""
-											width="40"
-											height="40"
-											style={{borderRadius: '50%'}}
-										/>
-									</button>
-									<button onClick={handleGithubSignIn} className="ml-3">
-										<img
-											src={githubimg}
-											alt=""
-											width="41"
-											height="40"
-											style={{borderRadius: '50%'}}
-										/>
-									</button>
-								</p>
-							</div>
+						</form>
+						<div className="social pb-4">
+							<span className="text-xl">Continue with </span>
+							<p className="flex justify-center items-center mt-3">
+								<button onClick={handleGoogleSignIn} className="ml-3">
+									<img
+										src={googleimg}
+										alt=""
+										width="40"
+										height="40"
+										style={{borderRadius: '50%'}}
+									/>
+								</button>
+								<button onClick={handleGithubSignIn} className="ml-3">
+									<img
+										src={githubimg}
+										alt=""
+										width="41"
+										height="40"
+										style={{borderRadius: '50%'}}
+									/>
+								</button>
+							</p>
 						</div>
-					</form>
+					</div>
 				</div>
 			</div>
 		</div>

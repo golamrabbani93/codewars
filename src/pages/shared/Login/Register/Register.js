@@ -8,7 +8,8 @@ import toast from 'react-hot-toast';
 
 const Register = () => {
 	// *get context data
-	const {UserCreateEmailPass, userUpdateProfile, googleSignIn} = useContext(AuthContext);
+	const {UserCreateEmailPass, userUpdateProfile, googleSignIn, githubSignIN} =
+		useContext(AuthContext);
 	//*get all register form data
 	const handleRegister = (e) => {
 		e.preventDefault();
@@ -65,15 +66,28 @@ const Register = () => {
 				});
 			});
 	};
+	//*Github sign in method
+	const handleGithubSignIn = () => {
+		githubSignIN()
+			.then((result) => {
+				// const user = result.user;
+				toast.success('Github Register Successfull!', {
+					duration: 5000,
+				});
+			})
+			.catch((err) => {
+				console.error(err);
+				toast.error(err.message, {
+					duration: 5000,
+				});
+			});
+	};
 	return (
 		<div>
 			<div className="hero min-h-screen bg-base-100">
-				<div className="hero-content flex-col lg:flex-row-reverse">
-					<form
-						onSubmit={handleRegister}
-						className="card flex-shrink-0 sm:w-96 max-w-sm shadow-2xl bg-base-300"
-					>
-						<div className="card-body">
+				<div className=" ">
+					<div className="card flex-shrink-0 sm:w-96 max-w-sm shadow-2xl bg-base-300">
+						<form onSubmit={handleRegister} className="card-body pb-0">
 							<div className="form-control">
 								<label className="label">
 									<span className="label-text">Full Name</span>
@@ -131,36 +145,37 @@ const Register = () => {
 										</Link>
 									</span>
 								</label>
+								<div className="form-control mt-6">
+									<button className="btn btn-primary">Register</button>
+								</div>
 							</div>
-							<div className="form-control mt-6">
-								<button className="btn btn-primary">Register</button>
-							</div>
+
 							<span className="border border-warning my-2"></span>
-							<div className="social">
-								<span className="text-xl">Continue with </span>
-								<p className="flex justify-center items-center mt-3">
-									<button onClick={handleGoogleSignIn} className="ml-3">
-										<img
-											src={googleimg}
-											alt=""
-											width="40"
-											height="40"
-											style={{borderRadius: '50%'}}
-										/>
-									</button>
-									<button className="ml-3">
-										<img
-											src={githubimg}
-											alt=""
-											width="41"
-											height="40"
-											style={{borderRadius: '50%'}}
-										/>
-									</button>
-								</p>
-							</div>
+						</form>
+						<div className="social pb-4">
+							<span className="text-xl">Continue with </span>
+							<p className="flex justify-center items-center mt-3">
+								<button onClick={handleGoogleSignIn} className="ml-3">
+									<img
+										src={googleimg}
+										alt=""
+										width="40"
+										height="40"
+										style={{borderRadius: '50%'}}
+									/>
+								</button>
+								<button onClick={handleGithubSignIn} className="ml-3">
+									<img
+										src={githubimg}
+										alt=""
+										width="41"
+										height="40"
+										style={{borderRadius: '50%'}}
+									/>
+								</button>
+							</p>
 						</div>
-					</form>
+					</div>
 				</div>
 			</div>
 		</div>
