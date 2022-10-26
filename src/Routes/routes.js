@@ -4,6 +4,7 @@ import Courses from '../pages/Courses/Courses';
 import FAQ from '../pages/FAQ/FAQ';
 import Home from '../pages/Home/Home';
 import CourseDetails from '../pages/shared/CousesSummary/CourseDetails/CourseDetails';
+import Register from '../pages/shared/Login/Register/Register';
 
 const {createBrowserRouter} = require('react-router-dom');
 
@@ -37,6 +38,10 @@ export const router = createBrowserRouter([
 					return fetch(`https://codewars-server.vercel.app/course-details/${params.id}`);
 				},
 				element: <CourseDetails></CourseDetails>,
+			},
+			{
+				path: '/register',
+				element: <Register></Register>,
 			},
 		],
 	},
