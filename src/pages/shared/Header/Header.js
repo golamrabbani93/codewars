@@ -118,23 +118,23 @@ const Header = () => {
 					</select>
 				</div>
 				{user?.uid ? (
-					<div className="dropdown dropdown-end " title="Golam Rabbani">
+					<div className="dropdown dropdown-end " title={user?.displayName}>
 						<label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-							<div className="w-10 rounded-full">
-								<img src="https://placeimg.com/80/80/people" alt="" />
+							<div className="avatar online">
+								<div className="w-10 rounded-full">
+									<img src={user?.photoURL} alt="" />
+								</div>
 							</div>
 						</label>
 						<ul
 							tabIndex={0}
-							className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
+							className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-300 rounded-box w-52"
 						>
+							<li className="font-bold">{user?.displayName}</li>
 							<li>
-								<Link className="justify-between">
-									Profile
-									<span className="badge">New</span>
-								</Link>
+								<Link className="justify-between">Edit Profile</Link>
 							</li>
-							<li>{/* <Link>{user}</Link> */}</li>
+
 							<li>
 								<Link>Logout</Link>
 							</li>
