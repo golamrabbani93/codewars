@@ -1,15 +1,12 @@
 import React, {useContext} from 'react';
 import {Link} from 'react-router-dom';
 import './Register.css';
-import googleimg from '../../../../assets/images/google.png';
-import githubimg from '../../../../assets/images/github.png';
 import {AuthContext} from '../../../../contexts/ContextProvider/ContextProvider';
 import toast from 'react-hot-toast';
 
 const Register = () => {
 	// *get context data
-	const {UserCreateEmailPass, userUpdateProfile, googleSignIn, githubSignIN} =
-		useContext(AuthContext);
+	const {UserCreateEmailPass, userUpdateProfile} = useContext(AuthContext);
 	//*get all register form data
 	const handleRegister = (e) => {
 		e.preventDefault();
@@ -50,38 +47,38 @@ const Register = () => {
 				console.error(err);
 			});
 	};
-	//*google sign in method
-	const handleGoogleSignIn = () => {
-		googleSignIn()
-			.then((result) => {
-				// const user = result.user;
-				toast.success('Google Register Successfull!', {
-					duration: 5000,
-				});
-			})
-			.catch((err) => {
-				console.error(err);
-				toast.error(err.message, {
-					duration: 5000,
-				});
-			});
-	};
-	//*Github sign in method
-	const handleGithubSignIn = () => {
-		githubSignIN()
-			.then((result) => {
-				// const user = result.user;
-				toast.success('Github Register Successfull!', {
-					duration: 5000,
-				});
-			})
-			.catch((err) => {
-				console.error(err);
-				toast.error(err.message, {
-					duration: 5000,
-				});
-			});
-	};
+	// //*google sign in method
+	// const handleGoogleSignIn = () => {
+	// 	googleSignIn()
+	// 		.then((result) => {
+	// 			// const user = result.user;
+	// 			toast.success('Google Register Successfull!', {
+	// 				duration: 5000,
+	// 			});
+	// 		})
+	// 		.catch((err) => {
+	// 			console.error(err);
+	// 			toast.error(err.message, {
+	// 				duration: 5000,
+	// 			});
+	// 		});
+	// };
+	// //*Github sign in method
+	// const handleGithubSignIn = () => {
+	// 	githubSignIN()
+	// 		.then((result) => {
+	// 			// const user = result.user;
+	// 			toast.success('Github Register Successfull!', {
+	// 				duration: 5000,
+	// 			});
+	// 		})
+	// 		.catch((err) => {
+	// 			console.error(err);
+	// 			toast.error(err.message, {
+	// 				duration: 5000,
+	// 			});
+	// 		});
+	// };
 	return (
 		<div>
 			<div className="hero min-h-screen bg-base-100">
