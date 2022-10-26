@@ -35,7 +35,7 @@ const Login = () => {
 							<div className="form-control mt-6">
 								<button className="btn btn-primary">Login</button>
 							</div>
-							<span className="border my-2"></span>
+							<span className="border border-warning  my-2"></span>
 							<div className="social">
 								<span className="text-xl">Continue with </span>
 								<p className="flex justify-center items-center mt-3">
