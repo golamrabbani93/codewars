@@ -1,9 +1,12 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import {Link} from 'react-router-dom';
 import './Register.css';
 import googleimg from '../../../../assets/images/google.png';
 import githubimg from '../../../../assets/images/github.png';
+import {AuthContext} from '../../../../contexts/ContextProvider/ContextProvider';
 const Register = () => {
+	// *get context data
+	const {UserCreateEmailPass} = useContext(AuthContext);
 	//*get all register form data
 	const handleRegister = (e) => {
 		e.preventDefault();
@@ -12,6 +15,16 @@ const Register = () => {
 		const photo = form.photo.value;
 		const email = form.email.value;
 		const password = form.password.value;
+
+		UserCreateEmailPass(email, password)
+			.then((result) => {
+				const user = result.user;
+				form.reset();
+				console.log('🚀🚀: handleRegister -> user', user);
+			})
+			.catch((err) => {
+				console.error(err);
+			});
 	};
 	return (
 		<div>
