@@ -1,9 +1,13 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import {Link, NavLink} from 'react-router-dom';
 import {themeChange} from 'theme-change';
 import {useEffect} from 'react';
 import './Header.css';
+import {AuthContext} from '../../../contexts/ContextProvider/ContextProvider';
 const Header = () => {
+	// *get Context data
+	const {user} = useContext(AuthContext);
+	//*change theme function
 	useEffect(() => {
 		themeChange(false);
 	}, []);
@@ -128,7 +132,7 @@ const Header = () => {
 							</Link>
 						</li>
 						<li>
-							<Link>Settings</Link>
+							<Link>{user}</Link>
 						</li>
 						<li>
 							<Link>Logout</Link>

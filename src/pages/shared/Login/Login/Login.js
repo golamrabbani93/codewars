@@ -8,9 +8,7 @@ const Login = () => {
 		e.preventDefault();
 		const form = e.target;
 		const email = form.email.value;
-		console.log('🚀🚀: handleLogin -> email', email);
 		const password = form.password.value;
-		console.log('🚀🚀: handleLogin -> password', password);
 	};
 	return (
 		<div>
