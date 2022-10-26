@@ -5,7 +5,7 @@ import SingleBlog from '../Blog/SingleBlog/SingleBlog';
 const FAQ = () => {
 	const datas = useLoaderData();
 	return (
-		<div>
+		<div className="container mx-auto">
 			<h2 className="text-2xl md:text-5xl py-6 font-bold">How to Improve your FAQ page</h2>
 			{datas.map((data) => (
 				<SingleBlog data={data}></SingleBlog>

@@ -8,9 +8,9 @@
 
 ### A list of technologies (frameworks, libraries) used in my project.
 
-## 1.React.
+### 1.React.
 
-## 2.React Router.
+### 2.React Router.
 
 ### 3.FireBase Authentication.
 
