@@ -10,9 +10,7 @@ const SingleBlog = ({data}) => {
 		>
 			<div className="collapse-title text-xl font-medium ">Questions: {Q}</div>
 			<div className="collapse-content">
-				<p>
-					{0} Ans:- {ans}
-				</p>
+				<p>Ans:- {ans}</p>
 			</div>
 		</div>
 	);
