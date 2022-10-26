@@ -1,11 +1,22 @@
 import React from 'react';
 import {useLoaderData} from 'react-router-dom';
-
+import toast from 'react-hot-toast';
 const Premium = () => {
 	//*get premium course data
 	const premium = useLoaderData();
-	console.log('🚀🚀: Premium -> premium', premium);
-	const {title, price, short_description, total_hours, enrolled} = premium;
+	const {title, price, short_description, enrolled} = premium;
+	const handleBuy = (e) => {
+		e.preventDefault();
+		const form = e.target;
+		const name = form.name.value;
+		toast.success(`Congratulations ${name}. You have purchased the course`, {
+			duration: 3000,
+			style: {
+				fontWeight: 'bold',
+			},
+		});
+		form.reset();
+	};
 	return (
 		<div className="card w-full  mt-5">
 			<div className="card-body ">
@@ -17,10 +28,11 @@ const Premium = () => {
 				<p>
 					Total Enrolled <span className="  text-3xl font-bold">{enrolled}</span>
 				</p>
-				<form className="mt-5">
+				<form onSubmit={handleBuy} className="mt-5">
 					<input
 						type="text"
 						placeholder="Your Name "
+						name="name"
 						className="input input-bordered input-primary w-full max-w-xs"
 						required
 					/>
