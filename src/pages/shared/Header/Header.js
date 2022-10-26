@@ -128,10 +128,10 @@ const Header = () => {
 					</select>
 				</div>
 				{user?.uid ? (
-					<div className="dropdown dropdown-end " title={user?.displayName}>
+					<div className="dropdown dropdown-end ">
 						<label tabIndex={0} className="btn btn-ghost btn-circle avatar">
 							<div className="avatar online">
-								<div className="w-10 rounded-full">
+								<div className="w-10 rounded-full" title={user?.displayName}>
 									<img src={user?.photoURL} alt="" />
 								</div>
 							</div>

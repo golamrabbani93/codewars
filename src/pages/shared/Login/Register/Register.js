@@ -145,14 +145,14 @@ const Register = () => {
 										</Link>
 									</span>
 								</label>
-								<div className="form-control mt-6">
+								<div className="form-control mt-6 mb-7">
 									<button className="btn btn-primary">Register</button>
 								</div>
 							</div>
 
-							<span className="border border-warning my-2"></span>
+							{/* <span className="border border-warning my-2"></span> */}
 						</form>
-						<div className="social pb-4">
+						{/* <div className="social pb-4">
 							<span className="text-xl">Continue with </span>
 							<p className="flex justify-center items-center mt-3">
 								<button onClick={handleGoogleSignIn} className="ml-3">
@@ -174,7 +174,7 @@ const Register = () => {
 									/>
 								</button>
 							</p>
-						</div>
+						</div> */}
 					</div>
 				</div>
 			</div>
