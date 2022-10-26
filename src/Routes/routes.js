@@ -4,6 +4,7 @@ import CheckOut from '../pages/CheckOut/CheckOut';
 import Courses from '../pages/Courses/Courses';
 import FAQ from '../pages/FAQ/FAQ';
 import Home from '../pages/Home/Home';
+import NotFoundPage from '../pages/shared/404-page/NotFoundPage';
 
 import CourseDetails from '../pages/shared/CousesSummary/CourseDetails/CourseDetails';
 import Login from '../pages/shared/Login/Login/Login';
@@ -72,6 +73,6 @@ export const router = createBrowserRouter([
 	},
 	{
 		path: '*',
-		element: <h2>page no found</h2>,
+		element: <NotFoundPage></NotFoundPage>,
 	},
 ]);
