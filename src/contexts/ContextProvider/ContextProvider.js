@@ -4,6 +4,7 @@ import {
 	getAuth,
 	onAuthStateChanged,
 	signInWithEmailAndPassword,
+	updateProfile,
 } from 'firebase/auth';
 import app from '../../firebase/firebase.config';
 export const AuthContext = createContext();
@@ -28,6 +29,10 @@ const ContextProvider = ({children}) => {
 			unSubscribed();
 		};
 	}, []);
+	//*update user profile
+	const userUpdateProfile = (profile) => {
+		return updateProfile(auth.currentUser, profile);
+	};
 	const info = {user, UserCreateEmailPass, loginEmailPass};
 
 	return <AuthContext.Provider value={info}>{children}</AuthContext.Provider>;
