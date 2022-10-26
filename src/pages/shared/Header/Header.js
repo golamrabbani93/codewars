@@ -48,7 +48,9 @@ const Header = () => {
 									<NavLink to="/blog">Blog</NavLink>
 								</li>
 								<div className="navbar-end lg:hidden w-full">
-									<Link className="btn">Get started</Link>
+									<Link to="/login" className="btn">
+										Login
+									</Link>
 								</div>
 								<select
 									className="select select-primary mt-4 w-full text-xs block lg:hidden "
@@ -105,7 +107,9 @@ const Header = () => {
 						<option value="">Dark</option>
 						<option value="light">Light</option>
 					</select>
-					<Link className="btn">Get started</Link>
+					<Link to="/login" className="btn">
+						Login
+					</Link>
 				</div>
 				<div className="dropdown dropdown-end " title="Golam Rabbani">
 					<label tabIndex={0} className="btn btn-ghost btn-circle avatar">
