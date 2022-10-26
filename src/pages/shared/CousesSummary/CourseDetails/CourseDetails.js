@@ -58,7 +58,7 @@ const CourseDetails = () => {
 								<Link to="/courses">
 									<button className="btn btn-primary mr-5">Go Back</button>
 								</Link>
-								<Link to={`/premium/${id}`}>
+								<Link to={`/checkout/${id}`}>
 									<button className="btn btn-primary">Get Premium</button>
 								</Link>
 							</div>

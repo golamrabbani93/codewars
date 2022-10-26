@@ -1,10 +1,10 @@
 import React from 'react';
 import {useLoaderData} from 'react-router-dom';
 import toast from 'react-hot-toast';
-const Premium = () => {
-	//*get premium course data
-	const premium = useLoaderData();
-	const {title, price, short_description, enrolled} = premium;
+const CheckOut = () => {
+	//*get CheckOut course data
+	const CheckOut = useLoaderData();
+	const {title, price, short_description, enrolled} = CheckOut;
 	const handleBuy = (e) => {
 		e.preventDefault();
 		const form = e.target;
@@ -51,4 +51,4 @@ const Premium = () => {
 	);
 };
 
-export default Premium;
+export default CheckOut;
