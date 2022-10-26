@@ -1,7 +1,7 @@
 import React, {useContext} from 'react';
 import googleimg from '../../../../assets/images/google.png';
 import githubimg from '../../../../assets/images/github.png';
-import {Link, useNavigate} from 'react-router-dom';
+import {Link, useLocation, useNavigate} from 'react-router-dom';
 import {AuthContext} from '../../../../contexts/ContextProvider/ContextProvider';
 import toast from 'react-hot-toast';
 const Login = () => {
@@ -9,6 +9,8 @@ const Login = () => {
 	const {loginEmailPass} = useContext(AuthContext);
 	// *use navigate
 	const navigate = useNavigate();
+	const location = useLocation();
+	const from = location.state?.from?.pathname || '/';
 	//*get all Login form data
 	const handleLogin = (e) => {
 		e.preventDefault();
@@ -19,7 +21,7 @@ const Login = () => {
 			.then((result) => {
 				// const user = result.user;
 				form.reset();
-				navigate('/');
+				navigate(from, {replace: true});
 				toast.success('Login Successfully', {
 					duration: 3000,
 				});
