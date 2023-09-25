@@ -32,7 +32,7 @@ const Home = () => {
 					Efficiently aggregate end-to-end core competencies without maintainable ideas. Dynamically
 					foster tactical solutions without enabled value.
 				</p>
-				<div className="grid md:grid-cols-3 gap-6">
+				<div className="grid md:grid-cols-3 justify-center items-center gap-6">
 					{allCoures.map((course) => (
 						<AllCoures course={course} key={course.id}></AllCoures>
 					))}

@@ -8,7 +8,6 @@ const Header = () => {
 	// *get Context data
 	const {user, userLogOut} = useContext(AuthContext);
 	const [checked, setChecked] = useState('');
-	console.log('🚀🚀: Header -> checked', checked);
 
 	//*change theme function
 	useEffect(() => {
